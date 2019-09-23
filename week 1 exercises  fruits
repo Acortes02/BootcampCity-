@@ -1,0 +1,25 @@
+// exercises fruits option 1
+
+void setup()
+{
+int apples
+int bananas
+int oranges
+
+print("totalnumber of fruits",apple+bananas+oranges);
+
+}
+
+// exercises fruits ption 2
+
+void setup()
+{
+ int apple = 12;
+ int bananas = 7;
+ int oranges = 6;
+ 
+ int sum4=apple+bananas+oranges ;
+ 
+ println(" total number of fruit",sum4);
+}
+

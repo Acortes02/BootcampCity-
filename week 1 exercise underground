@@ -1,0 +1,47 @@
+void setup()
+{
+  size(400, 300);
+  fill(203, 118, 122);
+}
+ 
+void draw()
+{background(255, 236, 149);
+  rect(mouseX, mouseY, 120, 80);
+}
+
+void setup()
+{
+
+  size(600,400);
+  background(255);
+  
+}
+
+void draw()
+{
+  
+ // large red circle
+ 
+ fill(255,94,97);
+ ellipse(300,200,150,150);
+ 
+ //small withe circle 
+
+ fill(255,255,255);
+ ellipse(300,200,80,80);
+ 
+// blue rectagle 
+
+ rectMode(CENTER);
+ fill(29,23,227);
+ rect(300,200,200,30);
+ 
+//test
+ textAlign(CENTER,CENTER);
+ fill(255);
+ textSize(22);
+ text("UNDERGROUND",300,200);
+ 
+ 
+
+}

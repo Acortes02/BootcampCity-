@@ -1,0 +1,39 @@
+
+
+void setup ()
+{
+size(300,200);
+
+}
+ void draw ()
+{
+ background (255);
+ float x = width/2;
+ float y = height/2;
+ 
+ if (dist(x,y,mouseX,mouseY) < 40)
+ {
+    fill(255,100,100);
+ }
+ else 
+ {
+
+  fill(255,12,54);
+ }
+ 
+
+ ellipse(200,100,80,80);
+ 
+ 
+ fill(242,12,54);
+ 
+ float distanceTocentre =
+ dist(x,y,mouseX,mouseY);
+ text (distanceTocentre,x,y);
+
+
+ rectMode(CENTER);
+ fill(255,255,255);
+ rect(200,95,130,20);
+ 
+}

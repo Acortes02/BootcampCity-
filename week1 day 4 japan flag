@@ -1,0 +1,18 @@
+void setup()
+{
+  size(400,400);
+}
+
+void draw()
+{
+  background(255);
+  flag(width/2,mouseY); //calling it or numbers instead (10, 90) or (mouseX,mouseY)
+  flag(mouseX,mouseY); //extra for 2 balls moving
+}
+
+void flag(float x, float y)  //declaring it//or void flag(float x, float y) or drawShape() PARAMETERS
+{
+  fill(255,0,0);
+  ellipse  (x, y, 90, 90);////change to (width/2, height/2,90,90);  or to (distFromTop ,distFromTop
+  
+} 

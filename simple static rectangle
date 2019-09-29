@@ -1,0 +1,18 @@
+void setup()
+{
+  size(400,300);
+}
+ 
+void draw()
+{
+  background(255,236,149);     // Clear screen with yellow background.
+ 
+  float xPosition = 150;      // Declare and initialise position of rectangle.
+  float yPosition = 100;
+ 
+  // Draw red rectangle with rounded edges.
+  noStroke();
+  fill(203,118,122);
+  rect(xPosition,yPosition,90,50,20);
+}
+///////////////////////////////////////////////////////////////////////

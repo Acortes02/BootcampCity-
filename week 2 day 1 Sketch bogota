@@ -1,0 +1,22 @@
+PImage img;
+
+void setup() {
+  size(660, 370);
+  img = loadImage("bogota.jpeg");    // -- You'll need to add the image to load here ...
+  strokeWeight(5);
+  stroke(255, 128);
+}
+
+void draw() {
+    image(img, 0, 0);       // -- draws the image on the canvas
+  if (mousePressed) {
+    line(pmouseX, pmouseY, mouseX, mouseY);
+  }
+}
+
+void keyPressed () {
+  save( "image");   // -- Save an image of the current canvas to the sketch folder ...
+}
+
+
+//Drag an image into the sketch from a browser, or from your compu

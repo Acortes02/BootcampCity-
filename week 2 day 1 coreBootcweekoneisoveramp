@@ -1,0 +1,29 @@
+void setup()
+{
+  String message = "Bootcamp week one is now over";
+ 
+ println(message.toUpperCase());  // Convert text to upper-case
+ println(message.toLowerCase());   // Extract part of string from 8th character onwards
+
+
+  println(message.length());
+
+ 
+ if (message.charAt(4) == ('c'))
+{
+  println(" this what you expected!");
+} else {
+   println(" try again!");
+ 
+}
+
+ if (message.contains("day"))
+ 
+{
+  println("Day found!");
+}
+// if (message.equalsIgnoreCase())
+//{
+//  println("No match found!");
+//  }
+}

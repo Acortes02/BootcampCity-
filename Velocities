@@ -1,0 +1,92 @@
+float px1;
+float py1;
+float vx1;
+float vy1;
+
+float px2;
+float py2;
+float vx2;
+float vy2;
+
+boolean connected;
+
+void setup() {
+  size(1000, 1000);
+
+  px1 = random(width);
+  py1 = random(height);
+  vx1 = random(-5, 5);
+  vy1 = random(-5, 5);
+
+  px2 = random(width);
+  py2 = random(height);
+  vx2 = random(-10, 10);
+  vy2 = random(-10, 10); 
+
+  connected = true;
+}
+
+void draw() {
+  background(250);
+  noStroke();
+  ellipseMode(CENTER);
+
+  fill(0);
+  ellipse(px1, py1, 30, 30);
+  ellipse(px2, py2, 30, 30);
+
+
+  stroke(1);
+  if (connected) {
+    line(px1, py1, px2, py2);
+  }
+
+  //update velocities using various force 
+  //computations (i.e., compute forces,
+  //turn them into velocity vectors, add them
+  //to the points' existing velocities
+
+  //ex: add coulomb repulsive force to the point velocities
+  float d = dist(px1, py1, px2, py2);
+  float mag = 10000 * 1./(d*d);
+
+  vx1 = vx1 + mag * (px1 - px2)/d;
+  vy1 = vy1 + mag * (py1 - py2)/d;
+
+  vx2 = vx2 + mag * (px2 - px1)/d;
+  vy2 = vy2 + mag * (py2 - py1)/d;
+
+  // add spring force to the velocities
+  // of the points
+
+  d = dist(px1, py1, px2, py2);
+  mag = 0.0001*d;
+
+  vx1 = vx1 - mag * (px1 - px2)/d;
+  vy1 = vy1 - mag * (py1 - py2)/d;
+
+  vx2 = vx2 - mag * (px2 - px1)/d;
+  vy2 = vy2 - mag * (py2 - py1)/d;  
+
+
+  //update positions with velocities
+  //(i.e. add velocities to positions)
+  //and bounce them off walls
+  float nextx = px1 + vx1;
+  if (nextx < 0 || nextx > width)
+    vx1 = - vx1;
+  float nexty = py1 + vy1;    
+  if (nexty < 0 || nexty > height)
+    vy1 = - vy1;
+  px1 = px1 + vx1;
+  py1 = py1 + vy1;
+
+  nextx = px2 + vx2;
+  if (nextx < 0 || nextx > width)
+    vx2 = - vx2;
+  nexty = py2 + vy2;    
+  if (nexty < 0 || nexty > height)
+    vy2 = - vy2;
+  px2 = px2 + vx2;
+  py2 = py2 + vy2;
+}

@@ -1,0 +1,18 @@
+PImage image;
+PImage image_galaxy;
+
+void setup()
+{
+  size(1286,720);
+  image = loadImage("spaceship.png");
+  image_galaxy = loadImage("galaxy.png");
+  imageMode(CENTER);
+}
+void draw()
+{
+   //background(255);
+   background(image_galaxy);
+   //image(image, width/2, height/2);
+   image(image,constrain(mouseX,50,930),600);
+    
+}

@@ -1,0 +1,31 @@
+import processing.sound.*;
+
+SoundFile file;
+float L;
+
+PImage image;
+PImage image_universe;
+
+
+void setup()
+{
+  size(1285,720);
+  image = loadImage("spaceshipstartrek.png");
+  image_universe = loadImage("universe.png");
+   imageMode(CENTER);
+   file = new SoundFile(this,"startrekmusic.mp3");
+   file.play();
+   file.amp(20);
+  
+}
+void draw()
+{
+   background(255);
+   background(image_universe);
+   //image(image, width/2, height/2);
+   image(image,constrain(mouseX,50,930),400);
+   
+    
+}
+
+//////////////////////////////////////////////////////

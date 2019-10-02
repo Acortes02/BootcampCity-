@@ -1,0 +1,34 @@
+//project BootcampCitymusic
+
+import processing.sound.*;
+
+SoundFile file;
+float L;
+
+PImage image;
+PImage image_galaxy;
+
+
+void setup()
+{
+  size(1286,720);
+  image = loadImage("spaceship.png");
+  image_galaxy = loadImage("galaxy.png");
+  imageMode(CENTER);
+  file = new SoundFile(this,"music.mp3");
+  file.play();
+  file.amp(19);
+  
+  
+  
+}
+void draw()
+{
+   //background(255);
+   background(image_galaxy);
+   //image(image, width/2, height/2);
+   image(image,constrain(mouseX,50,930),400);
+   
+    
+}
+///////////////////////////////////////////////

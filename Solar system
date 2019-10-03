@@ -1,0 +1,51 @@
+float x,y,z,alpha,beta;
+void setup()
+{
+size(700, 650, P3D);
+alpha=270;
+beta=140;
+}
+
+void draw() {
+background(0);
+
+translate(350, 325, 0);
+
+//aqui anadimos los focos de luz
+
+spotLight(255, 255, 255, width/2+15000*cos(beta), height/2+100*sin(beta),10000*sin(beta), 0, 0, -1, PI/2, 3);
+spotLight(255, 255, 255, width/2+15000*cos(beta), height/2+100*sin(beta),10000*sin(beta)+8500, 0, 0, -1, PI, 0.001);
+
+noStroke();
+fill(0,0,255);
+sphere(150);
+
+//movimiento del satélite
+
+if(alpha==360)
+{
+alpha=0;
+}
+
+alpha=alpha+0.03;
+
+translate(275*cos(alpha), 150*sin(alpha), 275*sin(alpha));
+noStroke();
+fill(90,90,90);
+sphere(30);
+
+//movimiento del sol
+
+if(beta==360)
+{
+beta=0;
+}
+
+beta=beta+0.004;
+
+translate(15000*cos(beta), sin(beta), 10000*sin(beta));
+fill(255,154,0);
+sphere(7000);
+
+}
+ ///////////////////////////////////////////
